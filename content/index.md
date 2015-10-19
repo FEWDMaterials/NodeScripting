@@ -5,7 +5,6 @@ Welcome to General Assembly.
 # About Me
 
 <div class="github-card" data-github="mottaquikarim" data-width="400" data-height="" data-theme="default"></div>
-<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
 1. [Software engineer](https://twitter.com/sharehoney) by day
 2. [FEWD instructor](https://generalassemb.ly/instructors/taqqui-karim/1667) by weekend
@@ -24,3 +23,8 @@ Welcome to General Assembly.
 1. Browserify
 2. Gulp to automate
 3. Practice! Build something with CommonJS + gulp!
+
+##### Class notes on github
+
+<div class="github-card" data-github="FEWDMaterials" data-repo="NodeScriptingExamples" data-width="400" data-height="" data-theme="default"></div>'
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
