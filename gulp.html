@@ -1001,40 +1001,58 @@ body#dark {
     <!-- Sidebar Constructor -->
     <div class="constructor">
         <header>
-    <h1 class="gamma section-title">§ Introduction to Scripting with NodeJS</h1>
+    <h1 class="gamma section-title">§ Gulp</h1>
 </header>
 
-<h3 id="hello-wrold-">Hello, Wrold!</h3>
-<p>Welcome to GA!</p>
-<h1 id="about-me">About Me</h1>
-<div class="card-holder">
-    <div class="github-card" data-github="mottaquikarim" data-width="400" data-height="" data-theme="default"></div>
-</div>
+<h2 id="recipes">Recipes</h2>
+<p>Watch javascript files and compile on change</p>
+<pre><code class="lang-javascript">var gulp = require(&#39;gulp&#39;);
+var watchify = require(&#39;gulp-watchify&#39;);
 
-<ol>
-<li><a href="https://twitter.com/sharehoney">Software engineer</a> by day</li>
-<li><a href="https://generalassemb.ly/instructors/taqqui-karim/1667">FEWD instructor</a> by weekend</li>
-<li>Hacker of <a href="http://fewd.us/">all things awesome</a> by night.</li>
-</ol>
-<h1 id="game-plan">Game Plan</h1>
-<h5 id="bro-do-you-even-node-">Bro, do you even Node?</h5>
-<ol>
-<li>Node Intro</li>
-<li>How to write javascript with NodeJS</li>
-<li>Simple command line interface</li>
-</ol>
-<h5 id="build-tools-for-fe-development">Build tools for FE development</h5>
-<ol>
-<li>Browserify</li>
-<li>Gulp to automate</li>
-<li>Practice! Build something with CommonJS + gulp!</li>
-</ol>
-<h5 id="class-notes-on-github">Class notes on github</h5>
-<div class="card-holder">
-    <div class="github-card" data-github="FEWDMaterials" data-repo="NodeScriptingExamples" data-width="400" data-height="" data-theme="default"></div>&#39;
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-</div>
+gulp.task(&#39;app&#39;, watchify(function(watchify) {
+    // Single entry point to browserify 
+    return gulp.src(&#39;app.js&#39;)
+        .pipe(watchify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
+        .pipe(gulp.dest(&#39;./build/js&#39;))
+}));
+</code></pre>
+<p>To run this code, simply do this:</p>
+<pre><code class="lang-bash">gulp app
+</code></pre>
+<p>You can also watch and compile less files</p>
+<pre><code class="lang-css">var gulp = require(&#39;gulp&#39;);
+var less = require(&#39;gulp-less&#39;);
 
+// Build CSS
+gulp.task(&#39;css&#39;, function(){
+    return gulp.src(&#39;file.less&#39;)
+        .pipe(less())
+        .pipe(gulp.dest(&#39;./dist&#39;));
+});
+
+gulp.task(&#39;csswatch&#39;, function () {
+    gulp.watch(&#39;*.less&#39;, [&#39;css&#39;]);
+});
+</code></pre>
+<p>To run this code, simply do:</p>
+<pre><code class="lang-bash">gulp csswatch
+</code></pre>
+<p>To run a bunch of stuff on gulp, try this</p>
+<pre><code class="lang-javascript">gulp.task(&#39;default&#39;, [&#39;app&#39;, &#39;csswatch&#39;]);
+</code></pre>
+<p>Then do</p>
+<pre><code class="lang-bash">gulp
+</code></pre>
+<p>This is fun. Let&#39;s make something awesome.</p>
+<pre><code>/*
+    - let&#39;s create a simple app
+    - pulls in weather data
+    - draws 5-day forcast
+*/
+</code></pre>
         <p><button class="sidebar-toggle">Toggle sidebar</button></p>
     </div>
 </div>
