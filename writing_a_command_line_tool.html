@@ -1001,39 +1001,41 @@ body#dark {
     <!-- Sidebar Constructor -->
     <div class="constructor">
         <header>
-    <h1 class="gamma section-title">§ Introduction to Scripting with NodeJS</h1>
+    <h1 class="gamma section-title">§ Write a Command Line Tool</h1>
 </header>
 
-<h3 id="hello-wrold-">Hello, Wrold!</h3>
-<p>Welcome to GA!</p>
-<h1 id="about-me">About Me</h1>
-<div class="card-holder">
-    <div class="github-card" data-github="mottaquikarim" data-width="400" data-height="" data-theme="default"></div>
-</div>
+<h2 id="command-line">Command Line</h2>
+<p>How do we create simple command line scripts with NodeJS?</p>
+<pre><code class="lang-javascript">#! /usr/bin/env node
 
-<ol>
-<li><a href="https://twitter.com/sharehoney">Software engineer</a> by day</li>
-<li><a href="https://generalassemb.ly/instructors/taqqui-karim/1667">FEWD instructor</a> by weekend</li>
-<li>Hacker of <a href="http://fewd.us/">all things awesome</a> by night.</li>
-</ol>
-<h1 id="game-plan">Game Plan</h1>
-<h5 id="bro-do-you-even-node-">Bro, do you even Node?</h5>
-<ol>
-<li>Node Intro</li>
-<li>How to write javascript with NodeJS</li>
-<li>Simple command line interface</li>
-</ol>
-<h5 id="build-tools-for-fe-development">Build tools for FE development</h5>
-<ol>
-<li>Browserify</li>
-<li>Gulp to automate</li>
-<li>Practice! Build something with CommonJS + gulp!</li>
-</ol>
-<h5 id="class-notes-on-github">Class notes on github</h5>
-<div class="card-holder">
-    <div class="github-card" data-github="FEWDMaterials" data-repo="NodeScriptingExamples" data-width="400" data-height="" data-theme="default"></div>&#39;
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-</div>
+var fs = require(&#39;fs&#39;);
+
+/*
+    code here to copy a file
+*/
+
+function copyFile( file1Name, file2Name ) {
+    // implement code here
+}
+</code></pre>
+<pre><code class="lang-bash">&gt;&gt; node copy.js file1 file2
+</code></pre>
+<h2 id="globally-linking-your-script">Globally linking your script</h2>
+<p>in package.json</p>
+<pre><code class="lang-json">  &quot;bin&quot;: {
+    &quot;njscopy&quot;: &quot;./app.js&quot;
+  }
+</code></pre>
+<p>then, in terminal, globally install everything in your current working directory</p>
+<pre><code class="lang-bash">&gt;&gt; npm install -g .
+</code></pre>
+<p>finally, run</p>
+<pre><code class="lang-bash">&gt;&gt; npm link
+</code></pre>
+<p>if all goes well, if you do</p>
+<pre><code class="lang-bash">njscopy -h
+</code></pre>
+<p>you should see the help files show up!</p>
 
         <p><button class="sidebar-toggle">Toggle sidebar</button></p>
     </div>

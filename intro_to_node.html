@@ -1001,39 +1001,47 @@ body#dark {
     <!-- Sidebar Constructor -->
     <div class="constructor">
         <header>
-    <h1 class="gamma section-title">§ Introduction to Scripting with NodeJS</h1>
+    <h1 class="gamma section-title">§ Introduction to NodeJS</h1>
 </header>
 
-<h3 id="hello-wrold-">Hello, Wrold!</h3>
-<p>Welcome to GA!</p>
-<h1 id="about-me">About Me</h1>
-<div class="card-holder">
-    <div class="github-card" data-github="mottaquikarim" data-width="400" data-height="" data-theme="default"></div>
-</div>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<ul>
+<li>Download iTerm2 (if you prefer terminal, that&#39;s ok too)</li>
+<li>Install nodejs (everyone should have this done already)</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>What is NodeJS?</p>
+<pre><code class="lang-bash">&gt;&gt; &#39;Hello, (Node) Wrold&#39;
+</code></pre>
+<p>How dependency imports work in node</p>
+<pre><code class="lang-javascript">var Module = require(&#39;./someModule&#39;);
 
-<ol>
-<li><a href="https://twitter.com/sharehoney">Software engineer</a> by day</li>
-<li><a href="https://generalassemb.ly/instructors/taqqui-karim/1667">FEWD instructor</a> by weekend</li>
-<li>Hacker of <a href="http://fewd.us/">all things awesome</a> by night.</li>
-</ol>
-<h1 id="game-plan">Game Plan</h1>
-<h5 id="bro-do-you-even-node-">Bro, do you even Node?</h5>
-<ol>
-<li>Node Intro</li>
-<li>How to write javascript with NodeJS</li>
-<li>Simple command line interface</li>
-</ol>
-<h5 id="build-tools-for-fe-development">Build tools for FE development</h5>
-<ol>
-<li>Browserify</li>
-<li>Gulp to automate</li>
-<li>Practice! Build something with CommonJS + gulp!</li>
-</ol>
-<h5 id="class-notes-on-github">Class notes on github</h5>
-<div class="card-holder">
-    <div class="github-card" data-github="FEWDMaterials" data-repo="NodeScriptingExamples" data-width="400" data-height="" data-theme="default"></div>&#39;
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-</div>
+// ^^^ but what does that even MEAN??
+</code></pre>
+<p>Node Package Manager, or npm</p>
+<pre><code class="lang-json">{
+  &quot;name&quot;: &quot;statik&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;simple static site generator&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;author&quot;: &quot;Mottaqui Karim&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;colors&quot;: &quot;^1.1.2&quot;,
+    &quot;commander&quot;: &quot;^2.8.1&quot;,
+    &quot;marked&quot;: &quot;^0.3.5&quot;,
+    &quot;q&quot;: &quot;^1.4.1&quot;,
+    &quot;underscore&quot;: &quot;^1.8.3&quot;,
+    &quot;watch&quot;: &quot;^0.16.0&quot;
+  }
+}
+</code></pre>
+<pre><code class="lang-bash">&gt;&gt; npm init
+&gt;&gt; npm install
+</code></pre>
 
         <p><button class="sidebar-toggle">Toggle sidebar</button></p>
     </div>
